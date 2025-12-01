@@ -28,7 +28,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     padding: 0;
     margin: 0;
@@ -57,6 +57,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-bottom: 60px;
 }
 
 .content-wrapper {
@@ -121,9 +122,6 @@ body {
     align-items: center;
     gap: 24px;
     animation: fadeInUp 0.6s ease-out 0.3s both;
-}
-
-.app-icon {
 }
 
 .app-icon img {
@@ -253,29 +251,50 @@ body {
 
 /* Responsive Design */
 @media (max-width: 968px) {
+    .hero-section {
+        padding: 40px 24px;
+        padding-bottom: 40px;
+        overflow: hidden;
+    }
+    
     .hero-image {
         position: relative;
-        right: auto;
+        right: 0;
         top: auto;
         transform: none;
+        width: calc(100% + 24px);
+        max-width: calc(100% + 24px);
+        border-radius: 0;
+        margin-top: 32px;
+        margin-right: -24px;
+        margin-left: 0;
+        order: -1;
+        padding: 0;
+    }
+    
+    .hero-image img {
+        transform: scale(1);
+        transform-origin: center;
         width: 100%;
+        height: auto;
         max-width: 100%;
-        border-radius: 24px;
-        margin-top: 40px;
     }
     
     .content-wrapper {
         flex-direction: column;
-        gap: 40px;
+        gap: 32px;
     }
     
     .left-content {
         align-items: center;
         text-align: center;
+        width: 100%;
     }
     
     .title-section {
         justify-content: center;
+        flex-direction: column;
+        gap: 16px;
     }
     
     .title-group {
@@ -285,46 +304,68 @@ body {
     .buttons {
         align-items: center;
         width: 100%;
+        margin-top: 32px;
     }
     
     .secondary-buttons {
         justify-content: center;
         width: 100%;
+        flex-direction: column;
+    }
+    
+    .btn-primary {
+        width: 100% !important;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+        min-width: unset;
     }
 }
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: 40px 24px;
-        border-radius: 24px;
+        padding: 32px 20px;
+        padding-bottom: 32px;
+        overflow: hidden;
+    }
+    
+    .hero-image {
+        width: calc(100% + 20px);
+        max-width: calc(100% + 20px);
+        margin-right: -20px;
     }
     
     .title-section {
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
     }
     
     .app-icon img {
-        width: 60px;
-        height: 60px;
+        width: 64px;
+        height: 64px;
         border-radius: 16px;
     }
     
     .title {
-        font-size: 48px;
+        font-size: 42px;
+        line-height: 1.1;
     }
     
     .subtitle {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .description {
-        font-size: 20px;
+        font-size: 18px;
+        line-height: 1.5;
     }
     
     .btn {
-        padding: 14px 28px;
-        font-size: 16px;
+        padding: 16px 24px;
+        font-size: 17px;
+        min-height: 48px;
+        border-radius: 12px;
     }
     
     .btn-primary {
@@ -334,21 +375,76 @@ body {
     .secondary-buttons {
         flex-direction: column;
         width: 100%;
+        gap: 12px;
     }
     
     .btn-secondary {
         width: 100%;
         min-width: unset;
     }
+    
+    .content-wrapper {
+        gap: 24px;
+    }
+    
+    .hero-image {
+        margin-top: 24px;
+        margin-left: 0;
+        padding: 0;
+    }
 }
 
 @media (max-width: 480px) {
+    .hero-section {
+        padding: 24px 16px;
+        padding-bottom: 24px;
+        overflow: hidden;
+    }
+    
+    .hero-image {
+        width: calc(100% + 16px);
+        max-width: calc(100% + 16px);
+        margin-right: -16px;
+    }
+    
     .title {
-        font-size: 40px;
+        font-size: 36px;
+        line-height: 1.1;
+    }
+    
+    .subtitle {
+        font-size: 15px;
     }
     
     .description {
-        font-size: 18px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .app-icon img {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .btn {
+        padding: 14px 20px;
+        font-size: 16px;
+        min-height: 44px;
+    }
+    
+    .content-wrapper {
+        gap: 20px;
+    }
+    
+    .hero-image {
+        margin-top: 20px;
+        margin-left: 0;
+        padding: 0;
+    }
+    
+    .buttons {
+        margin-top: 24px;
+        gap: 16px;
     }
 }
 
