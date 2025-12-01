@@ -28,6 +28,9 @@ setTimeout(matchButtonWidths, 500);
 
 // Download button handler
 downloadBtn.addEventListener('click', (e) => {
+    // Prevent the default link behavior to avoid double download
+    e.preventDefault();
+    
     // If you upload to UploadThing or another CDN, replace this with the full URL
     // For now, using relative path (works if DMG is in same directory as website)
     const downloadUrl = 'FontSafe.dmg';
